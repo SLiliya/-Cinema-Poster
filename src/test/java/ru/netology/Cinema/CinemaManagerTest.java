@@ -58,17 +58,6 @@ public class CinemaManagerTest {
     }
 
     @Test
-    public void lastMoviesOne() {
-        CinemaManager manager = new CinemaManager();
-
-        manager.addMovies("TheGentlemen");
-
-        String[] expected = {"TheGentlemen"};
-        String[] actual = manager.findLast();
-        Assertions.assertArrayEquals(actual, expected);
-    }
-
-    @Test
     public void lastMoviesMore() {
         CinemaManager manager = new CinemaManager();
 
@@ -80,4 +69,21 @@ public class CinemaManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(actual, expected);
     }
+
+    @Test
+    public void FindMoviesMore() {
+        CinemaManager manager = new CinemaManager();
+
+        manager.addMovies("TheGentlemen");
+        manager.addMovies("TheInvisibleMan");
+        manager.addMovies("TrollsWorldTour");
+        manager.addMovies("TheGentlemen");
+        manager.addMovies("Onward");
+        manager.addMovies("HotelBelgrad");
+
+        String[] expected = {"HotelBelgrad", "Onward", "TheGentlemen", "TrollsWorldTour", "TheInvisibleMan"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(actual, expected);
+    }
+
 }

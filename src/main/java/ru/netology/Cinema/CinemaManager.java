@@ -5,13 +5,12 @@ public class CinemaManager {
     private final int limit;
 
     public CinemaManager() {
-        this.limit = 3;
+        this.limit = 5;
 
     }
 
     public CinemaManager(int limit) {
         this.limit = limit;
-
     }
 
     public void addMovies(String movie) {
